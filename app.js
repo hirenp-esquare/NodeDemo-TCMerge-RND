@@ -1,6 +1,11 @@
 const express = require('express');
+const dotenv = require('dotenv');
 
 const app = express();
+
+dotenv.config();
+console.log(`Your port is ${process.env.PORT}`);
+
 async function init() {
   console.log('App init');
   const approuting = require('./modules');

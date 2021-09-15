@@ -1,6 +1,6 @@
 const app = require('./app');
 
 const server = require('http').Server(app);
-server.listen(4001,'localhost', ()=> {
+server.listen(Number(`${process.env.PORT}`),'localhost', ()=> {
     console.log('Server Started');
 });
