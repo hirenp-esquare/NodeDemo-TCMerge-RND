@@ -19,9 +19,11 @@ app.use(express.json()) // To parse the incoming requests with JSON payloads
 
 // //app.use(bodyParser1);
 
+
+
 app.use(function(req, res, next) {
   //next();
-  console.log("CreateRegistration MSSQL Called" + req.body); // + req.body["test"];
+  console.log("General middleware called" + req.body); // + req.body["test"];
 
   // console.log(JSON.stringify(req.body));
   // var postData = JSON.parse(req.body);
@@ -34,6 +36,7 @@ app.use(function(req, res, next) {
     res.sendStatus(401);
   }
   else {
+    console.log("extend call next ");
     next();
     //res.json({'requestBody': req.body}) 
   }
